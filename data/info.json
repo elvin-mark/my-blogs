@@ -7,6 +7,14 @@
             "image":"https://raw.githubusercontent.com/elvin-mark/my-blogs/main/data/dl-ml/neural-networks/nn.png",
             "url":"https://raw.githubusercontent.com/elvin-mark/my-blogs/main/data/dl-ml/neural-networks/README.md"
 
+        },
+        {
+            "id":"7cdc6e7d-7aac-4d6d-9c68-85091e758cbd",
+            "title":"What is Autodifferentiation?",
+            "description":"A brief introduction to autodifferentiation and how to apply to ML/DL",
+            "image":"https://raw.githubusercontent.com/elvin-mark/my-blogs/main/data/dl-ml/autodiff/autodiff-graph.png",
+            "url":"https://raw.githubusercontent.com/elvin-mark/my-blogs/main/data/dl-ml/autodiff/README.md"
+
         }
     ],
     "blogsMath": [
