@@ -1,24 +1,34 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useEffect, useState } from "react";
+import Home from "./components/Home";
+import { BrowserRouter } from "react-router-dom";
+import axios from "axios";
 
 function App() {
+  const [blogsDLML, setBlogsDLML] = useState([]);
+  const [blogsPhysics, setBlogsPhysics] = useState([]);
+  const [blogsMath, setBlogsMath] = useState([]);
+
+  useEffect(() => {
+    axios
+      .get(
+        "https://raw.githubusercontent.com/elvin-mark/my-blogs/main/data/info.json"
+      )
+      .then((e) => {
+        setBlogsDLML(e.data.blogsDLML);
+        setBlogsMath(e.data.blogsMath);
+        setBlogsPhysics(e.data.blogsPhysics);
+      });
+  }, []);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+      <div>
+        <Home
+          blogsDLML={blogsDLML}
+          blogsMath={blogsPhysics}
+          blogsPhysics={blogsMath}
+        ></Home>
+      </div>
+    </BrowserRouter>
   );
 }
 
